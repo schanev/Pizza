@@ -5,5 +5,5 @@ import Pizza from './PizzaList/PizzaList';
 import data from './data'
 
 
-ReactDOM.render(<Pizza product={data[0]} />, document.getElementById('root'));
+ReactDOM.render(<Pizza products={data} />, document.getElementById('root'));
 
