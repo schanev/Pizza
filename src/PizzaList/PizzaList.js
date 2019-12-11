@@ -10,16 +10,19 @@ const renderPizzas = (products) => {
   })
 }
 
-const PizzaList = ({products}) => {
-  
-  return (
-    <Fragment>
-      <Header />
-      <div className="container">
-        {renderPizzas(data)}
-      </div>
-    </Fragment>
-  )
+class PizzaList extends React.Component{
+ 
+  render(){
+    return (
+      <Fragment>
+        <Header />
+        <div className="container">
+          {renderPizzas(data)}
+        </div>
+      </Fragment>
+    )
+  }
+ 
 }
 
 export default PizzaList;
