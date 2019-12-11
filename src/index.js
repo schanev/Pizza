@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Pizza from './PizzaList/PizzaList';
-import data from './data'
+import Navigation from './Navigation';
 
 
-ReactDOM.render(<Pizza products={data} />, document.getElementById('root'));
+ReactDOM.render(<Navigation />, document.getElementById('root'));
 

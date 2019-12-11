@@ -1,5 +1,5 @@
 .product-image {
-    width: 200px;
+    width:200px;
   }
  
 
@@ -7,22 +7,29 @@
     display: inline-block;
     background:  #eee;
     color: #282c34;
-    padding: 0 15px 20px;
-    margin: 10px;
+    word-wrap: break-word;
+    width:240px;
+    height:280px;
+    padding: 30px 25px 20px;
+    margin: 20px;
   }
   
   .product-name {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
     text-align: left;
   }
   
   .product-description {
     display: block;
+    height: 100px;
+    width: 200px;
     font-size: 17px;
     font-style: italic;
     text-align: left;
-    margin: 10px 0;
+    margin: 10px 20px;
   }
   
   .product-price {
@@ -30,12 +37,10 @@
     text-align: left;
   }
   
-  .product-seconds {
-    font-size: 12px;
-  }
-
   .product-price span {
     margin-left: 5px;
     color: red;
     font-size: 17px;
   }
+
+  

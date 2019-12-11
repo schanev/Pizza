@@ -6,8 +6,9 @@
   
   .header-container span {
     display: inline-block;
-    line-height: 70px;
+    line-height: 45px;
     margin-left: 20px;
+    
   }
   
   .header-container input {

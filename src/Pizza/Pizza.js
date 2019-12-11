@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types'
 import './Pizza.css';
+import {Link} from 'react-router-dom';
 
 class Pizza extends React.Component {
-    constructor(props){
-        super(props)
-    }
+  
 
 render() {
-    const { image, name, description, price } = this.props
+    const { image, name, description, price, id } = this.props
     return (
         <div className="product-tile">
         <img className="product-image" src={image} alt={name} />
@@ -18,8 +17,9 @@ render() {
           <p className="product-price">
             Price:
             <span>
-              {price}$
+              {price}$  <Link to={`/pizza/${id}`}><button>Order</button></Link>
             </span>
+           
           </p>
         </div>
       </div>

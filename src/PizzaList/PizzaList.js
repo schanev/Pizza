@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types'
 import Pizza from '../Pizza/Pizza';
 import Header from '../Header/Header';
 import './PizzaList.css';
+import data from '../data';
 
 const renderPizzas = (products) => {
   return products.map(product => {
@@ -11,23 +11,15 @@ const renderPizzas = (products) => {
 }
 
 const PizzaList = ({products}) => {
-
+  
   return (
     <Fragment>
       <Header />
       <div className="container">
-        {renderPizzas(products)}
+        {renderPizzas(data)}
       </div>
     </Fragment>
   )
 }
-
-PizzaList.defaultProps = {
-  products: []
-}
-
-PizzaList.propTypes = {
-  products: PropTypes.array.isRequired
-}   
 
 export default PizzaList;
