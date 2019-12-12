@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import RegisterPage from "./RegisterPage/RegisterPage";
+import LoginPage from "./LoginPage/LoginPage";
 import PizzaList from "./PizzaList/PizzaList";
 import PizzaPage from "./PizzaPage/PizzaPage";
 import CheckoutPage from "./CheckoutPage/CheckoutPage";
@@ -11,6 +13,8 @@ const Navigation = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={PizzaList} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
         <Route path="/pizza/:id" component={PizzaPage} />
         <Route path="/checkout" component={CheckoutPage} />
         <Route component={ErrorPage} />
