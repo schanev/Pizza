@@ -1,28 +1,46 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState,useEffect } from 'react';
 import Pizza from '../Pizza/Pizza';
 import Header from '../Header/Header';
 import './PizzaList.css';
-import data from '../data';
+import axios from 'axios';
 
 const renderPizzas = (products) => {
   return products.map(product => {
-    return (<Pizza key={product.id} {...product} />)
+    return (<Pizza key={product._id} {...product} />)
   })
 }
 
-class PizzaList extends React.Component{
- 
-  render(){
-    return (
-      <Fragment>
-        <Header />
-        <div className="container">
-          {renderPizzas(data)}
-        </div>
-      </Fragment>
-    )
+function PizzaList () {
+  const [pizzas, setPizzas] = useState([]);
+  const [isLoading, setIsloading] = useState(false);
+
+  const  getPizzas = () => {
+    setIsloading(true)
+   axios.get('http://localhost:9999/api/pizza')
+     .then(pizzas => {
+       setIsloading(false);
+      setPizzas(pizzas.data)
+     }).catch(e => {
+       console.log(e)
+       setIsloading(false);
+     })
+ };
+
+  useEffect(()=>{
+    getPizzas();
+  },[])
+
+  if(isLoading){
+    return <p>Loading....</p>
   }
- 
+
+  
+return  <Fragment>
+         <Header />
+         <div className="container">
+           {renderPizzas(pizzas)}
+         </div>
+       </Fragment>
 }
 
 export default PizzaList;

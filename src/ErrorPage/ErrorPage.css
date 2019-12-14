@@ -1,2 +1,15 @@
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
-}
+button {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #188afc;
+    width: 100%;
+   margin-top: 40px;
+  }

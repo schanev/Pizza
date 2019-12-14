@@ -1,9 +1,15 @@
 import React, { Fragment } from "react";
+import {withRouter} from 'react-router-dom'
 import Header from "../Header/Header";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 class CheckoutPage extends React.Component{
  
+  componentDidMount(){
+    if(!localStorage.getItem('user')){
+      this.props.history.push('/users/login')
+    }
+  }
   
   render(){
     return (
@@ -15,4 +21,4 @@ class CheckoutPage extends React.Component{
   }
 };
 
-export default CheckoutPage;
+export default withRouter(CheckoutPage);

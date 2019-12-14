@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
-import Header from '../Header/Header';
-import LoginForm from '../LoginForm/LoginForm';
+import Header from '../Header/Header';  
+import LoginContainer from '../LoginForm/LoginContainer';
 
 
 const LoginPage = () => {
     return(
         <Fragment>
             <Header />
-            <LoginForm />
+            <LoginContainer />
         </Fragment>
     )
 }

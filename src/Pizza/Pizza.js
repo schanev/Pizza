@@ -7,7 +7,7 @@ class Pizza extends React.Component {
   
 
 render() {
-    const { image, name, description, price, id } = this.props
+    const { image, name, description, price, _id } = this.props
     return (
         <div className="product-tile">
         <img className="product-image" src={image} alt={name} />
@@ -17,7 +17,7 @@ render() {
           <p className="product-price">
             Price:
             <span>
-              {price}$  <Link to={`/pizza/${id}`}><button>Order</button></Link>
+              {price}$  <Link to={`/pizza/${_id}`}><button>Order</button></Link>
             </span>
            
           </p>
@@ -39,6 +39,6 @@ Pizza.defaultProps = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    price: PropTypes.number.isRequired
+    price: PropTypes.string.isRequired
   }
 export default Pizza;

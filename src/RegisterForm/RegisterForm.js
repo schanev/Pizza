@@ -1,17 +1,9 @@
 import React from 'react'
-import { render } from 'react-dom'
+import PropTypes from 'prop-types';
 import Styles from './Styles'
 import { Form, Field } from 'react-final-form'
 
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-const onSubmit = async values => {
-  await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-}
-
-const RegisterForm = () => (
+const RegisterForm = ({onSubmit}) => (
   <Styles>
     <h1>Register</h1>
     <Form
@@ -34,7 +26,7 @@ const RegisterForm = () => (
         }
         return errors
       }}
-      render={({ handleSubmit, form, submitting, pristine, values }) => (
+      render={({ handleSubmit, values }) => (
         <form onSubmit={handleSubmit}>
           <Field name="username">
             {({ input, meta }) => (
@@ -49,7 +41,7 @@ const RegisterForm = () => (
             {({ input, meta }) => (
               <div>
                 <label>Password</label>
-                <input {...input} type="password" placeholder="Password" />
+                <input {...input}   type="password" placeholder="Password" />
                 {meta.error && meta.touched && <span>{meta.error}</span>}
               </div>
             )}
@@ -58,32 +50,23 @@ const RegisterForm = () => (
             {({ input, meta }) => (
               <div>
                 <label>Confirm</label>
-                <input {...input} type="password" placeholder="Confirm" />
+                <input {...input}  type="password" placeholder="Confirm" />
                 {meta.error && meta.touched && <span>{meta.error}</span>}
               </div>
             )}
           </Field>
-
-
-          <Field name="terms">
+          <Field name="terms" type='checkbox'>
             {({ input, meta }) => (
               <div>
                 <label>Terms</label>
-                <input {...input} type="checkbox" />
+                <input {...input}  type="checkbox" />
                 {meta.error && meta.touched && <span>{meta.error}</span>}
               </div>
             )}
           </Field>
           <div className="buttons">
-            <button type="submit" disabled={submitting}>
+            <button type="submit" value="Register">
               Submit
-            </button>
-            <button
-              type="button"
-              onClick={form.reset}
-              disabled={submitting || pristine}
-            >
-              Reset
             </button>
           </div>
         </form>
@@ -91,6 +74,10 @@ const RegisterForm = () => (
     />
   </Styles>
 )
+
+RegisterForm.propTypes = {
+  onSubmit:PropTypes.func.isRequired
+}
 
 export default RegisterForm;
 

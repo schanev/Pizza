@@ -1,6 +1,6 @@
 .header-container {
     background: #3399ff;
-    height: 70px;
+    height: auto;
     text-decoration: none;
     font-style:italic;
     color: white;
@@ -8,10 +8,15 @@
   
   .header-container span {
     display: inline-block;
-    line-height: 15px;
+    margin-top: -20px;
     margin-left: 20px;
-    margin-bottom:40px;
     font-size:20px;
-    
+  }
+
+  li {
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+    list-style-type: none;
   }
 
